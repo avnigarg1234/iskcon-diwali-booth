@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curious about ISKCON? Welcome | Flower Mound &amp; Denton</title>
+  <meta name="description" content="New to ISKCON? A friendly introduction to the Hare Krishna community, big life questions, and finding calm in the age of AI. Call or text a devotee anytime.">
+  <meta name="theme-color" content="#4a1220">
+  <meta property="og:title" content="Curious about ISKCON? Welcome.">
+  <meta property="og:description" content="A friendly, no-pressure introduction. Big life questions, calm in the age of AI, and a real person to talk to.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%94%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --maroon: #4a1220;
+      --maroon-2: #6b1d2f;
+      --saffron: #e8680c;
+      --saffron-dark: #c4550a;
+      --marigold: #ffb11f;
+      --cream: #fff8ec;
+      --sand: #fdecc8;
+      --ink: #2b1a14;
+      --muted: #6a5648;
+      --white: #ffffff;
+      --radius: 20px;
+      --shadow: 0 10px 30px rgba(74, 18, 32, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      font-size: 17px;
+      padding-bottom: 84px; /* room for sticky call bar */
+      -webkit-text-size-adjust: 100%;
+    }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; margin: 0 0 .5em; color: var(--maroon); }
+    h1 { font-size: clamp(2.1rem, 8vw, 3.4rem); }
+    h2 { font-size: clamp(1.6rem, 5.5vw, 2.3rem); }
+    h3 { font-size: 1.25rem; }
+    p { margin: 0 0 1em; }
+    a { color: var(--saffron-dark); }
+    .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 56px 0; }
+    .eyebrow {
+      display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--saffron-dark); margin-bottom: 12px;
+    }
+    .lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; }
+    .center { text-align: center; }
+    .center .lead { margin-left: auto; margin-right: auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 54px; padding: 14px 26px; border-radius: 999px;
+      font: 700 1.05rem "Inter", sans-serif; text-decoration: none; cursor: pointer;
+      border: 2px solid transparent; transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--marigold); outline-offset: 3px; }
+    .btn-call { background: var(--saffron); color: var(--white); box-shadow: 0 8px 20px rgba(232,104,12,.35); }
+    .btn-call:hover { background: var(--saffron-dark); }
+    .btn-text { background: var(--white); color: var(--maroon); border-color: var(--maroon); }
+    .btn-light { background: var(--white); color: var(--maroon); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Top bar */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--maroon); color: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: "Fraunces", serif; font-weight: 700; font-size: 1.05rem; line-height: 1.1; }
+    .brand small { display: block; font: 500 .72rem "Inter", sans-serif; opacity: .8; letter-spacing: .04em; }
+    .brand .diya { font-size: 1.7rem; }
+    .topbar .btn { min-height: 44px; padding: 8px 18px; font-size: .98rem; white-space: nowrap; }
+    .topbar .phone-text { display: none; }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(900px 400px at 85% -10%, rgba(255,177,31,.55), transparent 60%),
+        radial-gradient(700px 400px at 0% 100%, rgba(232,104,12,.25), transparent 60%),
+        linear-gradient(180deg, #fff3da 0%, var(--cream) 100%);
+      padding: 48px 0 56px;
+      position: relative; overflow: hidden;
+    }
+    .hero .badge {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--white);
+      border: 1px solid #f1d9a8; border-radius: 999px; padding: 6px 14px;
+      font-size: .88rem; font-weight: 600; color: var(--maroon); margin-bottom: 18px;
+    }
+    .hero h1 span { color: var(--saffron); }
+    .hero .note { font-size: .95rem; color: var(--muted); margin-top: 14px; }
+    .hero .big-number { display: block; margin-top: 18px; font-weight: 700; font-size: 1.25rem; color: var(--maroon); text-decoration: none; }
+
+    /* Cards */
+    .grid { display: grid; gap: 18px; grid-template-columns: 1fr; margin-top: 28px; }
+    .card {
+      background: var(--white); border-radius: var(--radius); padding: 26px;
+      box-shadow: var(--shadow); border: 1px solid #f6e6c4;
+    }
+    .card .icon {
+      width: 52px; height: 52px; border-radius: 14px; background: var(--sand);
+      display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 14px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* Contact bands */
+    .contact-band {
+      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-2) 100%);
+      color: var(--white); padding: 44px 0; text-align: center;
+    }
+    .contact-band h2 { color: var(--white); margin-bottom: .3em; }
+    .contact-band p { color: #f5dcc4; max-width: 560px; margin: 0 auto 22px; }
+    .contact-band .btn-row { justify-content: center; }
+    .contact-band .num { display: block; margin-top: 18px; font: 700 1.5rem "Fraunces", serif; color: var(--marigold); text-decoration: none; }
+
+    /* Accordion */
+    details {
+      background: var(--white); border-radius: 16px; border: 1px solid #f6e6c4;
+      box-shadow: var(--shadow); margin-bottom: 14px; overflow: hidden;
+    }
+    summary {
+      list-style: none; cursor: pointer; padding: 20px 56px 20px 22px; position: relative;
+      font: 700 1.12rem "Fraunces", serif; color: var(--maroon); min-height: 56px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+      width: 30px; height: 30px; border-radius: 50%; background: var(--sand);
+      display: grid; place-items: center; font: 700 1.3rem "Inter", sans-serif; color: var(--saffron-dark);
+    }
+    details[open] summary::after { content: "–"; }
+    details .answer { padding: 0 22px 22px; color: var(--ink); }
+    details .answer p:last-child { margin-bottom: 0; }
+
+    /* AI section */
+    .ai { background: linear-gradient(160deg, #1c1020 0%, #2f1530 100%); color: #f3e6ee; }
+    .ai h2 { color: #fff; }
+    .ai .eyebrow { color: var(--marigold); }
+    .ai .lead { color: #d9c3d3; }
+    .verse {
+      margin-top: 24px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius); padding: 24px;
+    }
+    .verse .ref { font-weight: 700; color: var(--marigold); font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; }
+    .verse p { font-size: 1.12rem; margin: 10px 0 0; }
+    .ai-points { display: grid; gap: 14px; margin-top: 22px; }
+    .ai-points div { background: rgba(255,255,255,.05); border-radius: 14px; padding: 16px 18px; }
+    .ai-points strong { color: #fff; }
+
+    /* Mantra */
+    .mantra-box {
+      background: var(--white); border-radius: 24px; padding: 30px 24px; text-align: center;
+      box-shadow: var(--shadow); border: 2px solid var(--marigold);
+    }
+    .mantra {
+      font: 600 clamp(1.2rem, 4.8vw, 1.7rem) "Fraunces", serif; color: var(--maroon);
+      line-height: 1.5; margin: 14px 0 6px;
+    }
+    .steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; text-align: left; counter-reset: s; }
+    .steps li { position: relative; padding-left: 48px; counter-increment: s; }
+    .steps li::before {
+      content: counter(s); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--saffron); color: #fff; display: grid; place-items: center; font-weight: 700;
+    }
+
+    /* Programs */
+    .tag {
+      display: inline-block; background: var(--sand); color: var(--saffron-dark);
+      font-size: .76rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;
+    }
+    .ticks { list-style: none; padding: 0; margin: 12px 0 0; }
+    .ticks li { padding-left: 26px; position: relative; margin-bottom: 6px; font-size: .98rem; }
+    .ticks li::before { content: "✓"; position: absolute; left: 0; color: var(--saffron); font-weight: 700; }
+
+    /* Diwali strip */
+    .diwali { background: var(--sand); }
+    .diwali .box { display: grid; gap: 18px; align-items: center; }
+    .diwali .emoji { font-size: 3.4rem; }
+
+    /* Footer */
+    footer { background: #2a0b14; color: #e9cdb9; padding: 36px 0 28px; font-size: .95rem; }
+    footer a { color: var(--marigold); }
+    footer .fine { opacity: .7; font-size: .85rem; margin-top: 18px; }
+
+    /* Sticky bottom call bar (phones) */
+    .callbar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+      background: var(--white); border-top: 1px solid #ecd9b4; box-shadow: 0 -6px 20px rgba(0,0,0,.12);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: flex; gap: 10px;
+    }
+    .callbar .btn { flex: 1; min-height: 52px; padding: 10px 14px; font-size: 1rem; }
+
+    @media (min-width: 720px) {
+      body { padding-bottom: 0; font-size: 18px; }
+      .grid.three { grid-template-columns: repeat(3, 1fr); }
+      .grid.two { grid-template-columns: repeat(2, 1fr); }
+      .topbar .phone-text { display: inline; color: #f5dcc4; font-size: .95rem; margin-right: 6px; }
+      .callbar { display: none; }
+      .ai-points { grid-template-columns: repeat(3, 1fr); }
+      .diwali .box { grid-template-columns: auto 1fr; gap: 28px; }
+      section { padding: 76px 0; }
+      .hero { padding: 80px 0 84px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR: contact button always visible -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <span class="diya" aria-hidden="true">🪔</span>
+        <span>Bhakti Vriksha<small>FLOWER MOUND &amp; DENTON</small></span>
+      </div>
+      <div>
+        <span class="phone-text">Questions? Talk to a real person:</span>
+        <a class="btn btn-call" href="tel:+19727683436" aria-label="Call a devotee at (972) 768-3436">📞 Call (972) 768-3436</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="badge">🪔 Happy Diwali! Great to meet you at our booth</span>
+        <h1>Curious about ISKCON?<br><span>You're warmly welcome.</span></h1>
+        <p class="lead">No experience needed. This page is a quick, friendly introduction to who we are, a few of life's big questions, and a simple way to find calm in a fast, noisy world.</p>
+        <div class="btn-row">
+          <a class="btn btn-call" href="tel:+19727683436">📞 Call a devotee</a>
+          <a class="btn btn-text" href="sms:+19727683436">💬 Send a text</a>
+        </div>
+        <p class="note">A real, friendly person will answer your questions. No pressure, no sales pitch.</p>
+        <a class="big-number" href="tel:+19727683436">(972) 768-3436</a>
+      </div>
+    </section>
+
+    <!-- NEW HERE -->
+    <section>
+      <div class="wrap">
+        <span class="eyebrow">New here? Start here</span>
+        <h2>What is ISKCON, in plain words?</h2>
+        <p class="lead">ISKCON (the International Society for Krishna Consciousness), often called the Hare Krishna movement, is a spiritual community founded in 1966. Its teachings come from the Bhagavad Gita, an ancient Indian text about who we are and how to live with purpose and peace.</p>
+        <div class="grid three">
+          <div class="card">
+            <div class="icon" aria-hidden="true">📖</div>
+            <h3>Learn</h3>
+            <p>Friendly discussions on the Bhagavad Gita, with practical takeaways for work, family, and stress.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">🎶</div>
+            <h3>Experience</h3>
+            <p>Uplifting group singing (kirtan) and quiet mantra meditation. Come as a listener if you like.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">🍛</div>
+            <h3>Share a meal</h3>
+            <p>Vegetarian food offered with love, called <em>prasadam</em>, and a welcoming community to enjoy it with.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT BAND 1 -->
+    <div class="contact-band">
+      <div class="wrap">
+        <h2>Have a question? Just ask.</h2>
+        <p>Whether it's "what is this?" or "what should I read first?", a devotee is happy to chat.</p>
+        <div class="btn-row">
+          <a class="btn btn-call" href="tel:+19727683436">📞 Call now</a>
+          <a class="btn btn-light" href="sms:+19727683436">💬 Text us</a>
+        </div>
+        <a class="num" href="tel:+19727683436">(972) 768-3436</a>
+      </div>
+    </div>
+
+    <!-- LIFE QUESTIONS -->
+    <section>
+      <div class="wrap">
+        <span class="eyebrow">Big questions</span>
+        <h2>Questions that touch the heart</h2>
+        <p class="lead">Tap any question for a short answer from the Gita's point of view. It's a starting point, not the whole story.</p>
+        <div style="margin-top:28px">
+          <details>
+            <summary>Who am I, and what is life for?</summary>
+            <div class="answer">
+              <p>The Gita teaches that you are more than your body, job title, or achievements. You are a conscious, eternal self, and the body is like a vehicle you are traveling in.</p>
+              <p>From this view, life's purpose is to rediscover that deeper self and its natural joy and connection, rather than only chasing the next goal.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is life just aging, sickness, and loss?</summary>
+            <div class="answer">
+              <p>Change is certain: bodies age, situations shift, people come and go. The Gita points to something steadier, the self that observes all these changes without being destroyed by them.</p>
+              <p>That doesn't remove pain, but it offers a foundation of hope and perspective when things feel unstable.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How can an ancient book help with modern problems?</summary>
+            <div class="answer">
+              <p>The Gita is set on a battlefield, in the middle of a stressful decision. Its advice is about acting well under pressure, staying steady in success and failure, and working without being consumed by anxiety.</p>
+              <p>People apply it to careers, relationships, school stress, and finding balance.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Do I have to be Hindu, or religious, to join in?</summary>
+            <div class="answer">
+              <p>No. People of every background, belief, and level of curiosity are welcome, including skeptics. You can simply come, listen, ask questions, and decide for yourself.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SECTION -->
+    <section class="ai">
+      <div class="wrap">
+        <span class="eyebrow">Modern world, ancient wisdom</span>
+        <h2>Finding your footing in the age of AI</h2>
+        <p class="lead">AI is changing how we work, learn, and even what we think makes us valuable. If machines can calculate and create faster than us, it's fair to ask: who am I, then?</p>
+
+        <div class="verse">
+          <div class="ref">Bhagavad Gita 2.14</div>
+          <p>Joy and distress, gain and loss, they come and go like summer and winter. The wise learn to bear them calmly instead of being thrown around by them.</p>
+        </div>
+
+        <div class="ai-points">
+          <div><strong>Your worth isn't your output.</strong><br>The Gita places identity in consciousness, not in skills a machine might copy.</div>
+          <div><strong>Stay steady through change.</strong><br>Technology shifts fast. Inner stability doesn't have to.</div>
+          <div><strong>Use tools, don't be used.</strong><br>Purpose and values guide how we use technology, not the other way around.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRY MANTRA -->
+    <section>
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow">Try it tonight</span>
+          <h2>A 2-minute calming practice</h2>
+          <p class="lead">Mantra meditation uses sound to quiet a busy mind. It's simple, free, and takes no experience.</p>
+        </div>
+        <div class="mantra-box" style="margin-top:28px; max-width:640px; margin-left:auto; margin-right:auto;">
+          <strong>The Hare Krishna mantra</strong>
+          <p class="mantra">Hare Krishna, Hare Krishna,<br>Krishna Krishna, Hare Hare<br>Hare Rama, Hare Rama,<br>Rama Rama, Hare Hare</p>
+          <ol class="steps">
+            <li>Sit comfortably and take a few slow breaths.</li>
+            <li>Repeat the mantra softly out loud or quietly in your mind.</li>
+            <li>When your mind wanders (it will), gently bring your attention back to the sound.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section style="background:#fff3da">
+      <div class="wrap">
+        <span class="eyebrow">Ways to connect</span>
+        <h2>Come join us in Flower Mound &amp; Denton</h2>
+        <p class="lead">Our Bhakti Vriksha community is part of ISKCON Dallas. Call or text for the next dates and locations.</p>
+        <div class="grid three">
+          <div class="card">
+            <span class="tag">Weekly</span>
+            <h3>Family gatherings</h3>
+            <p>An evening for the whole family.</p>
+            <ul class="ticks">
+              <li>Scripture discussion for adults</li>
+              <li>Kids' program with values and stories</li>
+              <li>Vegetarian meal (prasadam)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="tag">Every 3 months</span>
+            <h3>Youth workshops</h3>
+            <p>For middle school, high school, and young adults.</p>
+            <ul class="ticks">
+              <li>Handling peer pressure and identity</li>
+              <li>Managing school stress</li>
+              <li>Healthy relationships and focus</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="tag">Special events</span>
+            <h3>Speakers &amp; retreats</h3>
+            <p>Connect with the wider community.</p>
+            <ul class="ticks">
+              <li>Guest talks from experienced teachers</li>
+              <li>Retreats and seminars</li>
+              <li>Festivals like Diwali</li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:28px">
+          <a class="btn btn-call" href="tel:+19727683436">📞 Call for next gathering</a>
+          <a class="btn btn-text" href="sms:+19727683436">💬 Text for details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIWALI -->
+    <section class="diwali">
+      <div class="wrap">
+        <div class="box">
+          <div class="emoji" aria-hidden="true">🪔</div>
+          <div>
+            <h2>About Diwali</h2>
+            <p style="margin:0">Diwali, the festival of lights, celebrates the victory of light over darkness and good over evil. Many devotees remember the return of Lord Rama to Ayodhya, welcomed home by rows of glowing lamps. Whatever your background, we hope the light of today brightens your year.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="wrap">
+        <span class="eyebrow">Good to know</span>
+        <h2>Common first-time questions</h2>
+        <div style="margin-top:24px">
+          <details>
+            <summary>Will anyone pressure me to join or commit?</summary>
+            <div class="answer"><p>No. Come, ask questions, and take your time. Exploring is always enough.</p></div>
+          </details>
+          <details>
+            <summary>What is prasadam?</summary>
+            <div class="answer"><p>Prasadam is vegetarian food prepared with care and offered before being shared. Many people say it's one of their favorite parts of visiting.</p></div>
+          </details>
+          <details>
+            <summary>Can I bring my kids?</summary>
+            <div class="answer"><p>Yes. Our community welcomes families, and there are programs designed with children and teens in mind.</p></div>
+          </details>
+          <details>
+            <summary>What should I do next?</summary>
+            <div class="answer"><p>Easiest step: call or text <a href="tel:+19727683436">(972) 768-3436</a> and say hello. Tell them you met us at the Diwali booth.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CONTACT BAND -->
+    <div class="contact-band">
+      <div class="wrap">
+        <h2>Let's talk. We'd love to hear from you.</h2>
+        <p>Questions about ISKCON, the Gita, upcoming events, or just curious? Reach out any time.</p>
+        <div class="btn-row">
+          <a class="btn btn-call" href="tel:+19727683436">📞 Call (972) 768-3436</a>
+          <a class="btn btn-light" href="sms:+19727683436">💬 Send a text</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Bhakti Vriksha, Flower Mound &amp; Denton</strong><br>
+      Serving Flower Mound, Denton, Lewisville and surrounding DFW areas.<br>
+      An initiative of <a href="https://iskcondallas.org" target="_blank" rel="noopener">ISKCON Dallas (iskcondallas.org)</a><br>
+      Contact: <a href="tel:+19727683436">(972) 768-3436</a>
+      <div class="fine">Happy Diwali from all of us. Hare Krishna.</div>
+    </div>
+  </footer>
+
+  <!-- STICKY CALL BAR (phones) -->
+  <div class="callbar">
+    <a class="btn btn-call" href="tel:+19727683436">📞 Call a devotee</a>
+    <a class="btn btn-text" href="sms:+19727683436">💬 Text</a>
+  </div>
+
+</body>
+</html>
