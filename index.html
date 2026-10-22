@@ -399,6 +399,14 @@
       .qcard { padding: 30px 28px 32px; }
       .qcard .q { font-size: 1.28rem; }
     }
+
+    /* Small label above each group of questions */
+    .qcard .qlabel {
+      display: inline-block; align-self: flex-start; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px;
+      font: 700 .74rem "Inter", sans-serif; letter-spacing: .09em; text-transform: uppercase;
+      background: var(--orange-soft); color: var(--orange-dark);
+    }
+    .qcard:nth-child(even) .qlabel { background: var(--lav-2); color: var(--purple-mid); }
   </style>
 </head>
 <body>
@@ -445,14 +453,17 @@
         </div>
         <div class="grid three">
           <div class="card qcard">
+            <span class="qlabel">The Search for Meaning</span>
             <span class="q">Who am I?</span>
             <span class="q">What is the purpose of life?</span>
           </div>
           <div class="card qcard">
+            <span class="qlabel">Making Sense of Suffering</span>
             <span class="q">Why do bad things happen to good people?</span>
             <span class="q">Why is there so much violence in the world?</span>
           </div>
           <div class="card qcard">
+            <span class="qlabel">Navigating Everyday Life</span>
             <span class="q">In the Age of AI, how is the Bhagavad Gita relevant?</span>
             <span class="q">Can scripture truly help me with my problems?</span>
           </div>
