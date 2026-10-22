@@ -353,22 +353,41 @@
       .btn { transition: none; }
     }
 
-    /* ===== Section colours (original soft palette, current section order) =====
-       hero (peach + purple glow) > questions (lavender) > why join (peach) > programs (lavender)
-       > visionaries (peach) > meditation (pastel gradient) > AI (deep purple) > form (purple) > footer */
+    /* ===== Section colours for the current order (v3) =====
+       hero (peach + purple glow) > questions (deep purple) > why join (peach) > programs (lavender)
+       > visionaries (orange) > meditation (soft purple) > AI (deep purple) > form (orange) > footer (deepest purple) */
     .hero { padding: 40px 0 52px; }
     .hero .lead { margin-bottom: 0; }
 
-    .questions { background: var(--lav); padding: 50px 0 56px; }
+    .questions {
+      background: linear-gradient(160deg, var(--purple-deeper) 0%, var(--purple-deep) 55%, #43238f 100%);
+      padding: 54px 0 60px; position: relative; overflow: hidden;
+    }
+    .questions::before { content: ""; position: absolute; left: -90px; bottom: -110px; width: 330px; height: 330px; background: radial-gradient(circle, rgba(240,122,16,.5), transparent 70%); }
+    .questions .wrap { position: relative; }
+    .questions h2 { color: #fff; margin-bottom: 0; }
     .questions .grid { margin-top: 28px; }
-    .qcard { padding: 26px 24px; display: flex; flex-direction: column; }
+    .qcard { background: #fff; padding: 26px 24px; border-top: 6px solid var(--orange); display: flex; flex-direction: column; box-shadow: 0 14px 30px rgba(0,0,0,.28); }
     .qcard .qnum { margin-bottom: 16px; }
     .qcard h3 { font-size: 1.32rem; line-height: 1.25; margin: 0; }
 
+    .why { background: linear-gradient(180deg, #fff3e3 0%, #ffe3c0 100%); }
+    .programs { background: linear-gradient(180deg, #f3edff 0%, #ddd0ff 100%); }
+    .programs .lead { color: #4d4575; }
+
+    .vision { background: linear-gradient(135deg, #ffe3b8 0%, #ffbf73 100%); }
+    .vision .eyebrow { color: var(--purple-deep); }
+    .vision .lead { color: #4a3a6b; }
+
+    .mantra { background: linear-gradient(135deg, #c9b6ff 0%, #e2d7ff 55%, #f1eaff 100%); }
+    .mantra-card { background: #fff; border-color: #fff; }
+
+    .connect { background: linear-gradient(135deg, #f58a1f 0%, #e2600a 100%); }
+    .connect::before { left: auto; bottom: auto; right: -90px; top: -100px; background: radial-gradient(circle, rgba(165,139,245,.65), transparent 70%); }
 
     @media (min-width: 720px) {
       .hero { padding: 64px 0 76px; }
-      .questions { padding: 66px 0 74px; }
+      .questions { padding: 72px 0 80px; }
       .qcard { padding: 32px 28px; }
     }
   </style>
