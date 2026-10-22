@@ -390,6 +390,15 @@
       .questions { padding: 72px 0 80px; }
       .qcard { padding: 32px 28px; }
     }
+
+    /* Question cards: text only, no number badges */
+    .qcard { padding: 24px 22px 26px; gap: 0; }
+    .qcard .q { display: block; font: 700 1.2rem/1.35 "Playfair Display", Georgia, serif; color: var(--purple-deep); }
+    .qcard .q + .q { margin-top: .8em; }
+    @media (min-width: 720px) {
+      .qcard { padding: 30px 28px 32px; }
+      .qcard .q { font-size: 1.28rem; }
+    }
   </style>
 </head>
 <body>
@@ -432,20 +441,20 @@
     <section class="questions" id="questions">
       <div class="wrap">
         <div class="center">
-          <h2>Questions That Touch the Heart</h2>
+          <h2>Have You Ever Wondered…</h2>
         </div>
         <div class="grid three">
           <div class="card qcard">
-            <div class="qnum">01</div>
-            <h3>Who am I &amp; What is the Purpose of Life?</h3>
+            <span class="q">Who am I?</span>
+            <span class="q">What is the purpose of life?</span>
           </div>
           <div class="card qcard">
-            <div class="qnum">02</div>
-            <h3>Is Life Just Old Age, Disease &amp; Death?</h3>
+            <span class="q">Why do bad things happen to good people?</span>
+            <span class="q">Why is there so much violence in the world?</span>
           </div>
           <div class="card qcard">
-            <div class="qnum">03</div>
-            <h3>How Does Scripture Solve Daily Problems?</h3>
+            <span class="q">In the Age of AI, how is the Bhagavad Gita relevant?</span>
+            <span class="q">Can scripture truly help me with my problems?</span>
           </div>
         </div>
       </div>
