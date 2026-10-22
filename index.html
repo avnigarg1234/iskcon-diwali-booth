@@ -723,9 +723,10 @@
 <script>
 (function () {
   // ===== Where form submissions go =====
-  // Paste your Formspree address between the quotes (it looks like https://formspree.io/f/abcdwxyz).
+  // Paste your Web3Forms Access Key between the quotes (a long code like 1a2b3c4d-....).
   // While this is empty, the form falls back to opening a text message to the contact number.
-  var FORM_ENDPOINT = "";
+  var WEB3FORMS_KEY = "be5d9de1-d5c8-47d1-8b54-f08a265136cf";
+  var FORM_ENDPOINT = WEB3FORMS_KEY ? "https://api.web3forms.com/submit" : "";
   var PHONE = "+19727683436";
 
   // ----- Mobile menu -----
@@ -790,7 +791,9 @@
       area: fd.get('area'),
       programs: fd.getAll('programs').join(', '),
       message: fd.get('message') || '',
-      _subject: 'New Bhakti Vriksha interest form'
+      subject: 'New Bhakti Vriksha interest form',
+      from_name: 'Bhakti Vriksha Website',
+      access_key: WEB3FORMS_KEY
     };
 
     if (!FORM_ENDPOINT) {
@@ -808,8 +811,8 @@
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }).then(function (r) {
-      if (!r.ok) throw new Error('bad response');
+    }).then(function (r) { return r.json(); }).then(function (res) {
+      if (!res || !res.success) throw new Error('bad response');
       form.hidden = true;
       success.hidden = false;
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
