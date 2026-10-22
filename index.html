@@ -293,17 +293,17 @@
     .success .tick { width: 64px; height: 64px; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; font-size: 2rem; margin: 0 auto 14px; }
 
     /* Footer */
-    footer { background: var(--purple-deeper); color: #d6ccf5; padding: 40px 0 116px; font-size: .95rem; }
+    footer { background: var(--purple-deeper); color: #d6ccf5; padding: 24px 0 96px; font-size: .95rem; }
     footer a { color: #ffc47a; }
-    footer .foot-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-    footer .foot-brand .logo { width: 58px; }
-    footer .foot-brand strong { font-family: "Playfair Display", serif; font-size: 1.2rem; color: #fff; }
+    footer .foot-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 0; }
+    footer .foot-brand .logo { width: 40px; flex: none; }
+    footer .foot-brand strong { font-family: "Playfair Display", serif; font-size: 1.05rem; color: #fff; }
     footer h4 { margin: 24px 0 8px; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
     footer ul { list-style: none; padding: 0; margin: 0; }
     footer li { margin-bottom: 6px; }
     footer ul a { color: #d6ccf5; text-decoration: none; }
     footer ul a:hover { color: #ffc47a; }
-    footer .fine { border-top: 1px solid rgba(255,255,255,.14); margin-top: 24px; padding-top: 16px; font-size: .85rem; opacity: .8; }
+    footer .fine { border-top: 1px solid rgba(255,255,255,.14); margin-top: 14px; padding-top: 12px; font-size: .8rem; opacity: .8; }
 
     /* Sticky bottom call bar (phones) */
     .callbar {
@@ -332,7 +332,7 @@
     }
     @media (min-width: 720px) {
       body { font-size: 18px; }
-      footer { padding-bottom: 30px; }
+      footer { padding: 28px 0 28px; }
       section { padding: 66px 0; }
       .grid.three { grid-template-columns: repeat(3, 1fr); }
       .grid.two { grid-template-columns: repeat(2, 1fr); }
@@ -706,31 +706,9 @@
 
   <footer>
     <div class="wrap">
-      <div class="foot-cols">
-        <div>
-          <div class="foot-brand">
-            <span class="logo white" role="img" aria-label="Lotus symbol"></span>
-            <strong>Bhakti Vriksha — Flower Mound, Denton &amp; Southlake</strong>
-          </div>
-          <p>Dedicated to bringing the timeless wisdom of the Bhagavad-Gita into everyday family life and youth empowerment in North Texas.</p>
-          <p><a href="tel:+19727683436">📞 Call a devotee</a> &nbsp;·&nbsp; <a href="sms:+19727683436">💬 Text a devotee</a></p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About Bhakti Vriksha</a></li>
-            <li><a href="#questions">Life Questions</a></li>
-            <li><a href="#programs">Programs &amp; Youth</a></li>
-            <li><a href="#visionaries">Steve Jobs Quote</a></li>
-            <li><a href="#ai">AI &amp; Spiritual Solution</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Community Location</h4>
-          <ul>
-            <li>📍 Serving Flower Mound, Denton, Southlake &amp; surrounding DFW areas.</li>
-          </ul>
-        </div>
+      <div class="foot-brand">
+        <span class="logo white" role="img" aria-label="Lotus symbol"></span>
+        <strong>Bhakti Vriksha — Flower Mound, Denton &amp; Southlake</strong>
       </div>
       <div class="fine">© 2026 Bhakti Vriksha Flower Mound, Denton &amp; Southlake. All rights reserved.<br><em>Scripture quotes sourced from Vedabase.io</em></div>
     </div>
